@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidJetpack</string>
     <string name="content_jetpack">content jetpack</string>
+    <string name="str_example">Hola soy %1$s y yo %2$s</string>
 </resources>

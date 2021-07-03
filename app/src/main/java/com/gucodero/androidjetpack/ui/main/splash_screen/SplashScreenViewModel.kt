@@ -1,11 +1,16 @@
 package com.gucodero.androidjetpack.ui.main.splash_screen
 
+import android.graphics.Color
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gucodero.androidjetpack.R
 import com.gucodero.androidjetpack.ui.base.BaseViewModel
 import com.gucodero.androidjetpack.ui.components.binding.BannerUIEntity
 import com.gucodero.androidjetpack.ui.main.splash_screen.models.SplashScreenUIEntity
+import com.gucodero.androidjetpack.ui.main.splash_screen.bindable_util.IconRes
+import com.gucodero.androidjetpack.ui.main.splash_screen.bindable_util.Text
+import com.gucodero.androidjetpack.ui.main.splash_screen.bindable_util.TextRes
+import com.gucodero.androidjetpack.ui.main.splash_screen.bindable_util.base.BindableText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.launch
@@ -19,6 +24,7 @@ class SplashScreenViewModel: BaseViewModel() {
     val countLiveData = MutableLiveData(0) //
     val colorLiveData = MutableLiveData<Int>() //
     val bannerUIEntityLiveData = MutableLiveData<BannerUIEntity>()
+    val text = MutableLiveData<BindableText>()
 
     /**
      * BaseObservable
@@ -28,7 +34,15 @@ class SplashScreenViewModel: BaseViewModel() {
 
     init {
         //initExample1()
-        initExample2()
+        //initExample2()
+        text.value = Text("Hola Mundo", colorRes = R.color.purple_200, bold = true) +
+                IconRes(R.drawable.ic_baseline_accessible_24) +
+                TextRes(R.string.str_example, "Pablo", "Chiron") +
+                Text(" Perro", color = Color.GREEN) +
+                Text(12, decimals = 2, separator = ".")
+
+        text.value = Text("S/") + Text(12.4, decimals = 2) +
+                Text("\n969647526", color = Color.GREEN)
     }
 
     /**
