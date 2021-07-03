@@ -27,8 +27,3 @@ fun setBannerList(view: LinearLayout, values: List<BannerUIEntity>?){
         view.addView(binding.root)
     }
 }
-
-@BindingAdapter("bindableText")
-fun setTextBuilder(view: TextView, bindableText: BindableText?){
-    view.text = bindableText?.buildText(view.context)
-}
