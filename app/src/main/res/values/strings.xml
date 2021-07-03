@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidJetpack</string>
+    <string name="content_jetpack">content jetpack</string>
+</resources>
